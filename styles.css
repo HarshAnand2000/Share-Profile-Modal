@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: black;
+}
+#wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+
+.circle1 {
+  position: absolute;
+  height: 13rem;
+  width: 13rem;
+  background: linear-gradient(-25deg, #fffdd0, #fdfce9);
+  /* background-color: #93b1a6; */
+  border-radius: 50%;
+  box-shadow: 0px 0px 50px #fffdd0;
+  top: 5%;
+  left: 30%;
+  animation: circleAnimate1 16s infinite;
+}
+
+@keyframes circleAnimate1 {
+  50% {
+    top: 6%;
+    left: 32%;
+  }
+}
+.circle2 {
+  position: absolute;
+  height: 19rem;
+  width: 19rem;
+  background: linear-gradient(-25deg, #ff7f11, #eb9850);
+  /* background-color: #ff7f11; */
+  border-radius: 50%;
+  box-shadow: 0px 0px 50px #ff7f11;
+  bottom: 5%;
+  right: 30%;
+  animation: circleAnimate2 8s infinite;
+}
+
+@keyframes circleAnimate2 {
+  50% {
+    bottom: 6%;
+    right: 32%;
+  }
+}
+
+.profile {
+  height: 500px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  border: 2px solid #ffffff30;
+  border-radius: 15px;
+  /* background-color: rgba(208, 197, 197, 0.3); */
+  background: #ffffff1a;
+  backdrop-filter: blur(10px);
+}
+
+img {
+  height: 9.4rem;
+  width: 9.4rem;
+  border-radius: 50%;
+}
+
+.user-name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.designation {
+  color: #ffffff85;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.bottom-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-card {
+  padding: 0.6rem 0.8rem;
+  /* padding: 9px 12px; */
+  width: 150px;
+  border: 2px solid #ffffffb9;
+  border-radius: 5px;
+  background: transparent;
+  color: #ffffffb9;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btn-card:hover {
+  background-color: #ffffffb9;
+  color: black;
+  text-transform: capitalize;
+  border-radius: 4px;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  background-color: #00000088;
+  backdrop-filter: blur(10px);
+  border: 2px solid #ffffff30;
+  border-radius: 15px;
+  width: 600px;
+  color: white;
+  padding: 15px 30px;
+  scale: 0;
+  transition: 0.5s ease-in-out;
+  transform-origin: 0% 0%;
+
+  z-index: 10;
+}
+
+.modal-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ffffffb9;
+  padding-bottom: 12px;
+  font-size: 1.5rem;
+}
+.modal-description {
+  font-weight: bold;
+  padding: 20px 0;
+  font-size: 1.1rem;
+}
+
+.close {
+  font-size: 2rem;
+  transition: 0.2s;
+}
+
+.close:hover {
+  cursor: pointer;
+  font-size: 2.3rem;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  margin-bottom: 2.1rem;
+}
+.icon {
+  text-decoration: none;
+  font-size: 2rem;
+  /* padding: 17px; */
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.1rem;
+}
+
+#github {
+  color: black;
+  border: 1px solid black;
+}
+
+#github:hover {
+  color: white;
+  background-color: black;
+}
+
+#linkedin {
+  color: #1771e6;
+  border: 1px solid #1771e6;
+}
+
+#linkedin:hover {
+  color: white;
+  background-color: #1771e6;
+}
+
+#instagram {
+  color: #cb2770;
+  border: 1px solid #cb2770;
+}
+
+#instagram:hover {
+  color: white;
+  background-color: #cb2770;
+}
+
+#whatsapp {
+  color: #2fe664;
+  border: 1px solid #2fe664;
+}
+
+#whatsapp:hover {
+  color: white;
+  background-color: #2fe664;
+}
+
+#telegram {
+  color: #0081c2;
+  border: 1px solid #0081c2;
+}
+
+#telegram:hover {
+  color: white;
+  background-color: #0081c2;
+}
+
+.active {
+  scale: 1;
+}
+
+.overlay {
+  position: fixed;
+  background-color: #5f5f5f83;
+  top: 0;
+  opacity: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.overlayactive {
+  opacity: 1;
+  pointer-events: auto; /*or we can also set it to initial*/
+}
